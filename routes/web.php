@@ -25,6 +25,8 @@ Route::get('/edit-pasien', [PasienController::class, 'edit'])->name('edit-pasien
 
 Route::delete('/patient/{patient}', [PasienController::class, 'destroy'])->name('destroy-pasien');
 
+Route::get('/log', [InfusionController::class, 'allLog'])->name('show-all-log');
+
 
 Route::get('/daftar-modul', [ModulController::class, 'index'])->name('daftar-modul.index');
 

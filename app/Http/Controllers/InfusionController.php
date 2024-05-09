@@ -39,6 +39,13 @@ class InfusionController extends Controller
             // Mengembalikan data dalam format JSON
             return response()->json($data);
         }
+
+
+        public function allLog(){
+            $allLog = Infusion::all();
+
+            return view('log.index', compact('allLog'));
+        }
         
 
     // Tambahkan fungsi untuk GET jika diperlukan
