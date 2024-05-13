@@ -32,7 +32,7 @@
                             <td>
                                 <div class="row">
                                     <div class="col-lg-4">
-                                        <a href="{{route('detail-pasien.show', $item)}}">
+                                        <a href="{{route('show-modul', $item)}}">
                                             <button class="form-control"><i class="bx bx-user"></i> Detail</button></a>
                                     </div>
 

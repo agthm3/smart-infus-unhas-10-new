@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Infusion;
 use App\Models\Modul;
 use Illuminate\Http\Request;
 use App\Models\Patient;
@@ -36,9 +37,14 @@ class ModulController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Modul $modul)
+    public function show(Patient $patient)
     {
-        //
+        // Fetch the latest infusion data for the same MAC address
+        $latestInfusion = Infusion::where('mac', $patient->mac)
+                                  ->latest('created_at')
+                                  ->first();
+
+        return view('modul.show',compact('patient', 'latestInfusion'));
     }
 
     /**

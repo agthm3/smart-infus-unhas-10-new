@@ -29,6 +29,7 @@ Route::get('/log', [InfusionController::class, 'allLog'])->name('show-all-log');
 
 
 Route::get('/daftar-modul', [ModulController::class, 'index'])->name('daftar-modul.index');
+Route::get('/show-modul/{patient}', [ModulController::class, 'show'])->name('show-modul');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
