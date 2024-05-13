@@ -16,5 +16,6 @@ class Patient extends Model
         'jenis_penyakit',
         'target_tpm',
         'mac',
+        'id'
     ];
 }

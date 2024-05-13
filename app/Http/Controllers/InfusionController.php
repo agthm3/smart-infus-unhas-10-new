@@ -31,7 +31,8 @@ class InfusionController extends Controller
             // Mengambil semua data pasien dan hanya mengembalikan `mac` dan `target_tpm`
             $data = Patient::all()->map(function ($patient) {
                 return [
-                    'mac' => $patient->mac,
+                    'mac' => $patient->mac, 
+                    'id' => $patient->id, 
                     'target_tpm' => $patient->target_tpm
                 ];
             });

@@ -18,6 +18,12 @@
                     <div class="card-body">
                         <form>
                             <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">Mac</label>
+                                <div class="col-sm-10">
+                                    <p class="form-control">{{$patient->mac}}</p>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">Nama</label>
                                 <div class="col-sm-10">
                                     <p class="form-control">{{$patient->nama}}</p>

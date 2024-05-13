@@ -5,7 +5,7 @@
         <div class="row">
             <!-- Basic Bootstrap Table -->
             <div class="card">
-                <h5 class="card-header">Daftar Modul Infus</h5>
+                <h5 class="card-header">Daftar Log</h5>
                 <div class="row">
 
                 </div>
