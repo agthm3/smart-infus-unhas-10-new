@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Infusion;
 use App\Models\Pasien;
 use Illuminate\Http\Request;
 use App\Models\Patient;
@@ -38,7 +39,14 @@ class PasienController extends Controller
      */
     public function show(Patient $patient)
     {
-        return view('pasien.show',compact('patient'));
+   
+        
+        // Fetch the latest infusion data for the same MAC address
+        $latestInfusion = Infusion::where('mac', $patient->mac)
+                                  ->latest('created_at')
+                                  ->first();
+
+        return view('pasien.show',compact('patient', 'latestInfusion'));
     }
 
     /**
