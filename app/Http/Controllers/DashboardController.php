@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dashboard;
+use App\Models\Infusion;
+use App\Models\Patient;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -12,9 +14,20 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
-    }
+        // Mendapatkan semua data infus dengan volume_infus < 100
+        $alertInfusions = Infusion::where('volume_infus', '<', 100)->get();
 
+        // Membuat array untuk menyimpan data pasien dengan infus yang hampir habis
+        $alertPatients = $alertInfusions->map(function ($infusion) {
+            $patient = Patient::where('mac', $infusion->mac)->first();
+            return [
+                'infusion' => $infusion,
+                'patient' => $patient
+            ];
+        });
+
+        return view('dashboard.index', compact('alertPatients'));
+    }
     /**
      * Show the form for creating a new resource.
      */

@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-Schema::create('infusions', function (Blueprint $table) {
-    $table->id();
-    $table->string('mac')->index();
-    $table->float('laju_cairan');
-    $table->float('volume_infus');
-    $table->timestamps();
-});
-
+        Schema::create('infusions', function (Blueprint $table) {
+            $table->id();
+            $table->string('mac')->index();
+            $table->float('laju_cairan');
+            $table->float('volume_infus');
+            $table->timestamps();
+        });
     }
 
     /**

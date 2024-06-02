@@ -18,4 +18,12 @@ class Patient extends Model
         'mac',
         'id'
     ];
+
+    protected $table = 'patients';
+
+    // Definisikan relasi jika diperlukan
+    public function infusions()
+    {
+        return $this->hasMany(Infusion::class, 'mac', 'mac');
+    }
 }
