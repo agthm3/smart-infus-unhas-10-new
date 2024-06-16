@@ -27,9 +27,7 @@
                             <td>{{$item->mac}}</td>
                             <td>{{$item->laju_cairan}}</td>
                             <td>{{$item->volume_infus}}</td>
-                            <td>{{$item->created_at->format('d M Y')}}</td>
-
-                       
+                            <td>{{$item->created_at->format('d M Y H:i:s')}}</td>                       
                         </tr>
                           @endforeach
                         </tbody>
