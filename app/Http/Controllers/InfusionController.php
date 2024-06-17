@@ -43,9 +43,10 @@ class InfusionController extends Controller
 
 
         public function allLog(){
-            $allLog = Infusion::all();
+        // Ambil 10 data terbaru
+        $allLog = Infusion::orderBy('created_at', 'desc')->paginate(10);
 
-            return view('log.index', compact('allLog'));
+        return view('log.index', compact('allLog'));
         }
         
 

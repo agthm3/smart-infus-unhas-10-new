@@ -33,6 +33,11 @@
                         </tbody>
                     </table>
                 </div>
+
+                <!-- Pagination Links -->
+                <div class="d-flex justify-content-center">
+                    {{ $allLog->links() }}
+                </div>
             </div>
             <!--/ Basic Bootstrap Table -->
 
