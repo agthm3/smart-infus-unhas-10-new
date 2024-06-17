@@ -17,35 +17,46 @@
             Pasien
         </h4>
         <div class="row">
-            <div class="col-lg-6"><div class="card mb-3"><div class="card-body ">
-                <div class="row">
-                    <div class="col-lg-12 "><div class="card"><div class="card-body bg-danger text-white big-number">Volume Infus</div></div></div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="big-number">
-                            {{ $latestInfusion->volume_infus. 'ml' ?? 'No data' }}
+            <div class="col-lg-6">
+                <div class="card mb-3">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-body bg-danger text-white big-number">Volume Infus</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="big-number">
+                                    {{ $latestInfusion ? $latestInfusion->volume_infus . 'ml' : 'No data' }}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                </div>
             </div>
-        </div>
-            <div class="col-lg-6"><div class="card mb-3"><div class="card-body ">
-                <div class="row">
-                    <div class="col-lg-12 "><div class="card"><div class="card-body bg-primary text-white big-number">Laju Cairan</div></div></div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="big-number">
-                            {{ $latestInfusion->laju_cairan ?? 'No data' }}
+            <div class="col-lg-6">
+                <div class="card mb-3">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-body bg-primary text-white big-number">Laju Cairan</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="big-number">
+                                    {{ $latestInfusion ? $latestInfusion->laju_cairan : 'No data' }}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                </div>
             </div>
-        </div>
-            
         </div>
 
         <!-- Basic Layout & Basic with Icons -->
