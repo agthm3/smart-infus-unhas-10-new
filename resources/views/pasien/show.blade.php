@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="big-number">
-                            {{ $latestInfusion->volume_infus ?? 'No data' }}
+                            {{ $latestInfusion->volume_infus. 'ml' ?? 'No data' }}
                         </div>
                     </div>
                 </div>
