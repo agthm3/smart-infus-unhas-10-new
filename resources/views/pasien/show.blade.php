@@ -109,7 +109,7 @@
                             </div>
                             <div class="row justify-content-end">
                                 <div class="col-sm-10">
-                                    <a href="{{ route('edit-pasien.edit') }}" class="btn btn-primary">Edit</a>
+                                    <a href="{{ route('edit-pasien.edit', $patient->id) }}" class="btn btn-primary">Edit</a>
                                 </div>
                             </div>
                         </form>

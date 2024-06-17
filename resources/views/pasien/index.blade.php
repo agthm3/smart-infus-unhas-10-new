@@ -100,7 +100,7 @@
                                                 <button class="form-control"><i class="bx bx-user"></i> Detail</button></a>
                                         </div>
                                         <div class="col-lg-4">
-                                            <a href="{{ route('edit-pasien.edit') }}"><button class="form-control"><i class="bx bx-edit-alt"></i> Edit</button></a>
+                                            <a href="{{ route('edit-pasien.edit', $item) }}"><button class="form-control"><i class="bx bx-edit-alt"></i> Edit</button></a>
                                         </div>
                                         <div class="col-lg-4">
                                             <form action="{{ route('destroy-pasien', $item) }}" method="post">

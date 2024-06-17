@@ -19,7 +19,9 @@ Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 Route::get('/daftar-pasien', [PasienController::class, 'index'])->name('daftar-pasien.index');
 Route::get('/tambah-pasien', [PasienController::class, 'create'])->name('tambah-pasien.create');
 Route::get('/detail-pasien/{patient}', [PasienController::class, 'show'])->name('detail-pasien.show');
-Route::get('/edit-pasien', [PasienController::class, 'edit'])->name('edit-pasien.edit');
+Route::get('/edit-pasien/{patient}', [PasienController::class, 'edit'])->name('edit-pasien.edit');
+Route::patch('/update-pasien/{patient}', [PasienController::class, 'update'])->name('update-pasien');
+
 
 Route::delete('/patient/{patient}', [PasienController::class, 'destroy'])->name('destroy-pasien');
 

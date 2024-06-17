@@ -59,19 +59,28 @@ class PasienController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Pasien $pasien)
+    public function edit(Patient $patient)
     {
-        return view('pasien.edit');
+        return view('pasien.edit', compact('patient'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Pasien $pasien)
+    public function update(Request $request, Patient $patient)
     {
-        //
-    }
+        $request->validate([
+            'nama' => 'required',
+            'nomor_id' => 'required|unique:patients,nomor_id,' . $patient->id,
+            'jenis_kelamin' => 'required',
+            'jenis_infus' => 'required',
+            'jenis_penyakit' => 'required',
+        ]);
 
+        $patient->update($request->all());
+
+        return redirect()->route('detail-pasien.show', $patient)->with('success', 'Data pasien berhasil diperbarui.');
+    }
     /**
      * Remove the specified resource from storage.
      */
