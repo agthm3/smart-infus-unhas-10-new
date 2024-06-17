@@ -12,9 +12,18 @@ class PasienController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $allpasien = Patient::all();
+        // Mengambil nilai pencarian dari request
+        $search = $request->input('search');
+
+        // Jika ada pencarian, filter pasien berdasarkan nama
+        if ($search) {
+            $allpasien = Patient::where('nama', 'LIKE', "%{$search}%")->get();
+        } else {
+            $allpasien = Patient::all();
+        }
+
         return view('pasien.index', compact('allpasien'));
     }
 
@@ -39,14 +48,12 @@ class PasienController extends Controller
      */
     public function show(Patient $patient)
     {
-   
-        
         // Fetch the latest infusion data for the same MAC address
         $latestInfusion = Infusion::where('mac', $patient->mac)
                                   ->latest('created_at')
                                   ->first();
 
-        return view('pasien.show',compact('patient', 'latestInfusion'));
+        return view('pasien.show', compact('patient', 'latestInfusion'));
     }
 
     /**

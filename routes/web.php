@@ -15,8 +15,6 @@ Route::post('/patients', [PatientController::class, 'store'])->name('patients.st
 
 Route::get('/infusions', [InfusionController::class, 'index']);
 
-
-
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 Route::get('/daftar-pasien', [PasienController::class, 'index'])->name('daftar-pasien.index');
 Route::get('/tambah-pasien', [PasienController::class, 'create'])->name('tambah-pasien.create');
@@ -26,7 +24,6 @@ Route::get('/edit-pasien', [PasienController::class, 'edit'])->name('edit-pasien
 Route::delete('/patient/{patient}', [PasienController::class, 'destroy'])->name('destroy-pasien');
 
 Route::get('/log', [InfusionController::class, 'allLog'])->name('show-all-log');
-
 
 Route::get('/daftar-modul', [ModulController::class, 'index'])->name('daftar-modul.index');
 Route::get('/show-modul/{patient}', [ModulController::class, 'show'])->name('show-modul');
