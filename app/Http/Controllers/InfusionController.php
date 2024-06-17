@@ -45,7 +45,7 @@ class InfusionController extends Controller
         public function allLog(Request $request)
         {
             // Ambil 10 data terbaru dengan pagination sederhana
-            $allLog = Infusion::orderBy('created_at', 'desc')->simplePaginate(10);
+            $allLog = Infusion::orderBy('created_at', 'desc')->simplePaginate(5);
     
             return view('log.index', compact('allLog'));
         }
