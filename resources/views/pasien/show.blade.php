@@ -50,7 +50,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="big-number">
-                                    {{ $latestInfusion ? $latestInfusion->laju_cairan : 'No data' }}
+                                    {{ $latestInfusion ? $latestInfusion->laju_cairan . 'tpm' : 'No data' }}
                                 </div>
                             </div>
                         </div>
