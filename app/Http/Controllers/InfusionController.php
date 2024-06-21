@@ -21,6 +21,7 @@ class InfusionController extends Controller
         $infusion->mac = $request->mac;
         $infusion->laju_cairan = $request->laju_cairan;
         $infusion->volume_infus = $request->volume_infus;
+        $infusion->alert = $request->alert;
         $infusion->save();
 
         return response()->json(['message' => 'Data saved successfully'], 200);

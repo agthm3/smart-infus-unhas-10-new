@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('mac')->index();
             $table->float('laju_cairan');
             $table->float('volume_infus');
+            $table->string('alert');
             $table->timestamps();
         });
     }

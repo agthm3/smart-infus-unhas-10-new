@@ -16,6 +16,7 @@ class DashboardController extends Controller
     {
         // Mendapatkan semua data infus dengan volume_infus < 100
         $alertInfusions = Infusion::where('volume_infus', '<', 100)->get();
+        $tpminfusion = Infusion::where('alert', 1)->get();
 
         // Membuat array untuk menyimpan data pasien dengan infus yang hampir habis
         $alertPatients = $alertInfusions->map(function ($infusion) {
@@ -26,7 +27,7 @@ class DashboardController extends Controller
             ];
         });
 
-        return view('dashboard.index', compact('alertPatients'));
+        return view('dashboard.index', compact('alertPatients', 'tpminfusion'));
     }
     /**
      * Show the form for creating a new resource.
