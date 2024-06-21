@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@dd($tpminfusion)
+
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="row">
             @foreach ($tpminfusion as $item)
