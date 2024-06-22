@@ -13,6 +13,7 @@ class Infusion extends Model
 
     public function patient()
     {
-        return $this->belongsTo(Patient::class, 'patient_id'); // Pastikan kolom foreign key benar
+        // Asumsi 'mac' ada di kedua tabel dan bisa digunakan untuk relasi
+        return $this->belongsTo(Patient::class, 'mac', 'mac');
     }
 }
