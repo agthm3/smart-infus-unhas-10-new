@@ -7,14 +7,15 @@
             @foreach ($tpminfusion as $item)
             {{-- @dd($item->patient) --}}
             <div class="col-lg-12 mb-4 order-0">
-              <div class="card">
+              <div class="card bg-danger text-white">
                   <div class="d-flex align-items-end row">
                       <div class="col-sm-7">
-                          <div class="card-body">
+                          <div class="card-body ">
                               <h5 class="card-title text-primary">  
-                                  <span><strong class="text-danger">Peringatan! Lewat 3 Menit</strong></span>
+                                  <span><strong class="text-white">Laju infus tidak sesuai target!</strong></span>
                               </h5>
-                              <p class="mb-4">Infus Pasien <strong>{{ $item->patient ? $item->patient->nama : 'Nama tidak ditemukan' }}</strong> hampir habis (Kurang 100ml)</p>
+                              <p class="mb-4">Infus Pasien <strong>{{ $item->patient ? $item->patient->nama : 'Nama tidak ditemukan' }}</strong> hampir habis (Kurang 100ml) lebih 3 menit!</p>
+                      
                             </div>
                       </div>
                       <div class="col-sm-5 text-center text-sm-left">
