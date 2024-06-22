@@ -12,9 +12,9 @@
                       <div class="col-sm-7">
                           <div class="card-body ">
                               <h5 class="card-title text-primary">  
-                                  <span><strong class="text-white">Laju infus tidak sesuai target!</strong></span>
+                                  <span><strong class="text-white">Peringatan!</strong></span>
                               </h5>
-                              <p class="mb-4">Infus Pasien <strong>{{ $item->patient ? $item->patient->nama : 'Nama tidak ditemukan' }}</strong> hampir habis (Kurang 100ml) lebih 3 menit!</p>
+                              <p class="mb-4">Laju infus <strong>{{ $item->patient ? $item->patient->nama : 'Nama tidak ditemukan' }}</strong> tidak sesuai target</p>
                       
                             </div>
                       </div>
